@@ -61,6 +61,11 @@ namespace vcpkg::Commands
         extern const CommandStructure COMMAND_STRUCTURE;
         void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths);
     }
+    namespace Info
+    {
+        extern const CommandStructure COMMAND_STRUCTURE;
+        void perform_and_exit(const VcpkgCmdArguments& args, const VcpkgPaths& paths);
+    }
 
     namespace List
     {

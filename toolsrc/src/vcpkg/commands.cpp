@@ -31,6 +31,7 @@ namespace vcpkg::Commands
             {"/?", &Help::perform_and_exit},
             {"help", &Help::perform_and_exit},
             {"search", &Search::perform_and_exit},
+            {"info", &Info::perform_and_exit},
             {"list", &List::perform_and_exit},
             {"integrate", &Integrate::perform_and_exit},
             {"owns", &Owns::perform_and_exit},

@@ -42,7 +42,7 @@ namespace vcpkg::Help
         nullptr,
     };
 
-    static constexpr std::array<Topic, 12> topics = {{
+    static constexpr std::array<Topic, 13> topics = {{
         {"create", command_topic_fn<Commands::Create::COMMAND_STRUCTURE>},
         {"edit", command_topic_fn<Commands::Edit::COMMAND_STRUCTURE>},
         {"env", command_topic_fn<Commands::Env::COMMAND_STRUCTURE>},
@@ -54,6 +54,7 @@ namespace vcpkg::Help
         {"owns", command_topic_fn<Commands::Owns::COMMAND_STRUCTURE>},
         {"remove", command_topic_fn<Remove::COMMAND_STRUCTURE>},
         {"search", command_topic_fn<Commands::Search::COMMAND_STRUCTURE>},
+        {"info", command_topic_fn<Commands::Info::COMMAND_STRUCTURE>},
         {"topics", help_topics},
     }};
 
@@ -80,6 +81,7 @@ namespace vcpkg::Help
         System::println(
             "Commands:\n"
             "  vcpkg search [pat]              Search for packages available to be built\n"
+            "  vcpkg info <pkg>                Display detailed information for the package\n"
             "  vcpkg install <pkg>...          Install a package\n"
             "  vcpkg remove <pkg>...           Uninstall a package\n"
             "  vcpkg remove --outdated         Uninstall all out-of-date packages\n"
