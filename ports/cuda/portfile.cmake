@@ -20,7 +20,7 @@ if (NVCC)
         RESULT_VARIABLE error_code)
 endif()
 
-set(CUDA_REQUIRED_VERSION "V9.0.0")
+set(CUDA_REQUIRED_VERSION "V8.0.0")
 
 if (error_code)
     message(FATAL_ERROR "Could not find CUDA. Before continuing, please download and install CUDA  (${CUDA_REQUIRED_VERSION} or higher) from:"
@@ -39,7 +39,7 @@ set(CUDA_VERSION_MAJOR ${CMAKE_MATCH_1})
 #set(CUDA_VERSION_MINOR ${CMAKE_MATCH_2})
 #set(CUDA_VERSION_PATCH ${CMAKE_MATCH_3})
 
-if (CUDA_VERSION_MAJOR LESS 9)
+if (CUDA_VERSION_MAJOR LESS 8)
     message(FATAL_ERROR "CUDA ${CUDA_VERSION} but ${CUDA_REQUIRED_VERSION} is required. Please download and install a more recent version of CUDA from:"
                         "\n    https://developer.nvidia.com/cuda-downloads\n")
 endif()
