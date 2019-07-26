@@ -8,6 +8,7 @@ vcpkg_from_github(
     HEAD_REF master
     PATCHES
         fix_libraw.patch
+        fix_rawinput.patch
         use-webp.patch
         remove_wrong_dependency.patch
 )
