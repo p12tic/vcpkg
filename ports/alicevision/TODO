@@ -1,0 +1,9 @@
+vcpgk
+
+* add min versions for each dependency in vcpkg.json
+
+
+portfile
+
+* fix ALICEVISION_USE_MESHSDFILTER (optional?), it cannot be used because it's a submodule and it is not allowed at git clone
+* move to a more recent version

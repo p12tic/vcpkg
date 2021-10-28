@@ -1,0 +1,129 @@
+{
+  "name": "alicevision",
+  "version-semver": "2.4.0",
+  "maintainers": "alicevision-team@googlegroups.com",
+  "description": "Photogrammetric Computer Vision Framework",
+  "homepage": "https://github.com/alicevision/AliceVision",
+  "supports": "!(uwp | arm | arm64 | android | x86)",
+  "dependencies": 
+  [
+    "boost-algorithm",
+    "boost-accumulators",
+    "boost-atomic",
+    "boost-container",
+    "boost-date-time",
+    "boost-exception",
+    "boost-filesystem",
+    "boost-graph",
+    "boost-log",
+    "boost-program-options",
+    "boost-property-tree", 
+    "boost-ptr-container", 
+    "boost-regex", 
+    "boost-serialization", 
+    "boost-system", 
+    "boost-thread",
+    "boost-timer",
+    "lz4",
+    "openexr",
+    "eigen3",
+    {
+      "name": "openimageio",
+      "features": [
+        "libraw",
+        "ffmpeg",
+        "freetype",
+        "opencv",
+        "gif",
+        "webp",
+        "opencolorio"
+      ],
+      "platform": "windows"
+    },
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    {
+      "name": "vcpkg-cmake-config",
+      "host": true
+    }
+  ],
+  "default-features": [
+    "alembic",
+    "cuda",
+    "sfm",
+    "mvs",
+    "software"
+  ],
+  "features": 
+  {
+    "alembic": 
+    {
+      "description": "Build with alembic support",
+      "dependencies": ["alembic"]
+    },    
+    "cctag": 
+    {
+      "description": "Build with cctag support",
+      "dependencies": ["cctag"]
+    },
+    "cuda": {
+      "description": "Build with Cuda support for the Multi-View stereo reconstruction",
+      "dependencies": ["cuda"]
+    },
+    "sfm": {
+      "description": "Build the Structure-From-Motion part",
+      "dependencies": [
+        {
+          "name": "ceres",
+          "features": [
+            "suitesparse",
+            "cxsparse"
+          ]
+        },
+        "clp",
+        "coinutils",
+        "osi",
+        "flann",
+        "liblemon"
+      ]
+    },
+    "mvs": {
+      "description": "Build the Multi-View Stereo reconstruction part",
+      "dependencies": [
+        "assimp",
+        "cuda",
+        "geogram",
+        "nanoflann"
+      ]
+    },
+    "hdr" : {
+      "description": "Build the High Dynamic Range part"
+    },
+    "opencv": {
+      "description": "Build with OpenCV support (Sift, calibration, image processing...)",
+      "dependencies": [    
+        {
+          "name": "opencv",
+          "features": [
+            "eigen",
+            "ffmpeg",
+            "webp",
+            "contrib",
+            "nonfree"
+          ]
+        }
+      ]
+    },
+    "openmp": {
+      "description": "Build with openmp support"
+    },
+    "popsift": {
+      "description": "Build with popsift support for fast sift detection"
+    },
+    "software": {
+      "description": "Build aliceVision command line tools"
+    }
+  }
+}
